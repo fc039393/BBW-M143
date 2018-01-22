@@ -16,9 +16,7 @@ public class MyResultSetMetadata {
         ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                    ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
             st = con.createStatement();
             rs = st.executeQuery("select * from emp");
             ResultSetMetaData rsmd = rs.getMetaData();

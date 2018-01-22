@@ -14,9 +14,7 @@ public class MyOutparmCallableStmt {
         CallableStatement callSt = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                    getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                        ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>","user","password");
             callSt = con.prepareCall("{call myprocedure(?,?)}");
             callSt.setInt(1,200);
             //below method used to register data type of the out parameter

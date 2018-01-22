@@ -12,9 +12,7 @@ public class MyDatabaseMetadata {
         Connection con = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                        ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
             DatabaseMetaData dm = con.getMetaData();
             System.out.println(dm.getDriverVersion());
             System.out.println(dm.getDriverName());

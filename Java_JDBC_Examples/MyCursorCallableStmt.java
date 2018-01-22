@@ -16,9 +16,7 @@ public class MyCursorCallableStmt {
         ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                    ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
             callSt = con.prepareCall("{call myCursorExmp(?,?)}");
             callSt.setInt(1,200);
             callSt.registerOutParameter(2, OracleTypes.CURSOR);

@@ -15,11 +15,8 @@ public class MyUpdatableResultSet {
         ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                        ,"user","password");
-            st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
-                            ResultSet.CONCUR_UPDATABLE);
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
+            st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             rs = st.executeQuery("select accno, bal from bank");
             while(rs.next()){
                 if(rs.getInt(1) == 100){

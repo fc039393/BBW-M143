@@ -14,8 +14,7 @@ public class MyConnWithProperties {
         prop.put("user", "user-name");
         prop.put("password", "password");
         try {
-            Connection con = DriverManager
-                .getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>", prop);
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>", prop);
             System.out.println("Got Connection Object");
         } catch (SQLException e) {
             // TODO Auto-generated catch block

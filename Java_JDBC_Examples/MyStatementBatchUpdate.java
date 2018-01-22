@@ -13,9 +13,7 @@ public class MyStatementBatchUpdate {
         Statement st = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                    ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
             con.setAutoCommit(false);
             st = con.createStatement();
             st.addBatch("update emp set sal=3000 where empid=200");

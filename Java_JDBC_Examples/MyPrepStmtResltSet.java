@@ -15,9 +15,7 @@ public static void main(String a[]){
         ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                    getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                        ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
             String query = "select * from emp where empid=?";
             prSt = con.prepareStatement(query);
             prSt.setInt(1, 1016);

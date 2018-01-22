@@ -13,9 +13,7 @@ public class MyExecuteMethod {
         Connection con = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                    getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                        ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>","user","password");
             Statement stmt = con.createStatement();
             //The query can be update query or can be select query
             String query = "select * from emp";

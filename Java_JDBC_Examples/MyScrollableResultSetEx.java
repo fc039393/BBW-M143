@@ -15,11 +15,8 @@ public class MyScrollableResultSetEx {
         ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                    ,"user","password");
-            st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
-                            ResultSet.CONCUR_READ_ONLY);
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
+            st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = st.executeQuery("select accno, bal from bank");
             System.out.println("ResultSet Curson is at before first: "+rs.isBeforeFirst());
             while(rs.next()){

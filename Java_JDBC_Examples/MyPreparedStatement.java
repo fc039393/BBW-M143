@@ -13,9 +13,7 @@ public class MyPreparedStatement {
         PreparedStatement prSt = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                    ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>","user","password");
             String query = "insert into emp(name,salary) values(?,?)";
             prSt = con.prepareStatement(query);
             prSt.setString(1, "John");

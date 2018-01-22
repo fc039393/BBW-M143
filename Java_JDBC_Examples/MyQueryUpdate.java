@@ -13,9 +13,7 @@ public class MyQueryUpdate {
         Statement stmt = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.
-                    getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>"
-                        ,"user","password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@<hostname>:<port num>:<DB name>" ,"user","password");
             stmt = con.createStatement();
             String query = "update table emp set salary=2000 where empid=200";
             //count will give you how many records got updated
