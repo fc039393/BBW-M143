@@ -1,3 +1,6 @@
+// Change-Log:
+// 2019-07-04 - Comment added
+
 package com.java2novice.jdbc;
  
 import java.sql.Connection;
